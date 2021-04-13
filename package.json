@@ -1,0 +1,24 @@
+{
+  "name": "fe-notes",
+  "private": true,
+  "version": "0.0.1",
+  "repository": "https://github.com/YunYouJun/fe-notes",
+  "author": {
+    "name": "YunYouJun",
+    "email": "me@yunyoujun.cn",
+    "url": "https://www.yunyoujun.cn"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^0.13.0"
+  },
+  "scripts": {
+    "dev": "yarn docs:dev",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "dependencies": {
+    "sass": "^1.32.8"
+  }
+}
