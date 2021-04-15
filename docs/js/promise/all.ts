@@ -34,7 +34,8 @@ function promiseAll(promises: Promise<any>[]) {
       Promise.resolve(p).then(
         (res) => {
           resolvedCounter++;
-          results[i] = res;
+          results[i] = res; // [3, 2, 1]
+          // results.push(res); // [1, 2, 3]
 
           if (resolvedCounter === promises.length) {
             return resolve(results);
