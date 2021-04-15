@@ -1,3 +1,5 @@
+const { getSidebar } = require("../../scripts/utils");
+
 /**
  * @type {import('vitepress').UserConfig}
  */
@@ -30,7 +32,10 @@ module.exports = {
 
     sidebar: {
       "/guide/": getGuideSidebar(),
-      "/js": getJsSidebar(),
+      "/common/": getSidebar("common", "通用"),
+      "/html/": getSidebar("html", "Html 相关"),
+      "/js/": getSidebar("js", "JavaScript 相关"),
+      "/css/": getSidebar("css", "CSS 相关"),
     },
   },
 
@@ -51,18 +56,6 @@ function getGuideSidebar() {
         { text: "关于", link: "/guide/" },
         { text: "开始", link: "/guide/start" },
         { text: "参考", link: "/guide/ref" },
-      ],
-    },
-  ];
-}
-
-function getJsSidebar() {
-  return [
-    {
-      text: "JavaScript",
-      children: [
-        { text: "Event", link: "/js/event/" },
-        { text: "Promise", link: "/js/promise/" },
       ],
     },
   ];
