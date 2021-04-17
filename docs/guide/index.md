@@ -12,6 +12,8 @@
 
 坐在我的隔壁的 LM 同学正在为明天的面试，练习手写起 Promise 来，但中途似乎还参考到了错误的文章，于是我决定向其展示一下更为优雅的做法，并以儆效尤。
 
+> [前端基础：我已经是个 js 程序员了](https://blog.mle.moe/2021/04/11/fe-writing/)
+
 ## Why Vitepress?
 
 因为 [语雀](https://www.yuque.com/yunyoujun/notes/) 还是 [博客](https://www.yunyoujun.cn)，放示例代码文件都不大方便，也不能即时执行，所以使用 git 仓库是最好的方式。
