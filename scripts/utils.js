@@ -26,7 +26,6 @@ function getPages(dir) {
  */
 function getSidebar(folder, title) {
   const pages = getPages(`docs/${folder}`);
-  console.log(pages);
   const sidebar = [
     {
       text: title,
@@ -42,9 +41,6 @@ function getSidebar(folder, title) {
   });
   return sidebar;
 }
-
-const ans = getSidebar("js");
-console.log(ans);
 
 module.exports = {
   getSidebar,
