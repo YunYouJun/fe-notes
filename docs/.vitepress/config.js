@@ -16,6 +16,7 @@ module.exports = {
     lastUpdated: "上次更新",
 
     nav: [
+      { text: "通用", link: "/common/" },
       {
         text: "Html",
         link: "/html/",

@@ -37,6 +37,36 @@ Polyfill 是一块代码（通常是 Web 上的 JavaScript），用来为旧浏�
 
 > [回流与重绘：CSS 性能让 JavaScript 变慢？- 张鑫旭](https://www.zhangxinxu.com/wordpress/2010/01/%E5%9B%9E%E6%B5%81%E4%B8%8E%E9%87%8D%E7%BB%98%EF%BC%9Acss%E6%80%A7%E8%83%BD%E8%AE%A9javascript%E5%8F%98%E6%85%A2%EF%BC%9F/) > [浏览器的回流与重绘 (Reflow & Repaint)](https://juejin.cn/post/6844903569087266823)
 
+### TypeScript 与 JavaScript 的区别
+
+TypeScript 是 JavaScript 的超集，扩展了 JavaScript 的语法，因此现有的 JavaScript 代码可与 TypeScript 一起工作无需任何修改，TypeScript 通过类型注解提供编译时的静态类型检查。
+
+TypeScript 可处理已有的 JavaScript 代码，并只对其中的 TypeScript 代码进行编译。
+
+> [TypeScript 官网](https://www.typescriptlang.org/)
+
+---
+
+TypeScript 是一种给 JavaScript 添加特性的语言扩展。增加的功能包括：
+
+- 类型批注和编译时类型检查
+- 类型推断
+- 类型擦除
+- 接口
+- 枚举
+- Mixin
+- 泛型编程
+- 名字空间
+- 元组
+- Await
+
+以下功能是从 ECMA 2015 反向移植而来：
+
+- 类
+- 模块
+- lambda 函数的箭头语法
+- 可选参数以及默认参数
+
 ### MDN
 
 - [渲染页面：浏览器的工作原理](https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work)

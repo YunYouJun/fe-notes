@@ -14,6 +14,8 @@
 
 > [前端基础：我已经是个 js 程序员了](https://blog.mle.moe/2021/04/11/fe-writing/)
 
+也因此，它可能更加针对我和朋友们在面试中确确实实被遇到的问题。
+
 ## Why Vitepress?
 
 因为 [语雀](https://www.yuque.com/yunyoujun/notes/) 还是 [博客](https://www.yunyoujun.cn)，放示例代码文件都不大方便，也不能即时执行，所以使用 git 仓库是最好的方式。

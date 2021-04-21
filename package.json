@@ -20,6 +20,6 @@
     "docs:serve": "vitepress serve docs"
   },
   "dependencies": {
-    "sass": "^1.32.10"
+    "sass": "^1.32.11"
   }
 }

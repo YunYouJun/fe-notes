@@ -11,3 +11,22 @@
 最常用的非对称加密算法：RSA
 
 > [对称加密、非对称加密、RSA(总结)](https://juejin.cn/post/6844903584073515016)
+
+## 网络攻击的方式
+
+> [浅谈常用的几种 web 攻击方式](https://zhuanlan.zhihu.com/p/44302803)
+
+- Distributed Denial of Service （DDoS， 分布式拒绝服务）
+- 跨站点请求伪造（CSRF，Cross-Site Request Forgeries）
+- SQL Injection （SQL 注入）
+- XSS 攻击（Cross-Site scripting）
+- Http Heads 攻击
+- Cookie 攻击
+- 重定向攻击
+- 上传文件攻击
+
+## 鉴权方式
+
+### JSON Web Token
+
+> [JSON Web Token 入门教程](https://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
