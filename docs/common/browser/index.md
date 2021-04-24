@@ -7,3 +7,17 @@ sessionStorage 属性允许你访问一个，对应当前源的 session Storage 
 sessionStorage 在页面刷新时不会丢失。
 
 ## [深入：微任务与 Javascript 运行时环境](https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth)
+
+## CORS
+
+模拟跨域 CORS
+
+[cors.html](/examples/cors.html)
+
+<<< @/public/examples/cors.html
+
+```bash
+Access to fetch at 'https://openapi.baidu.com/oauth/2.0/token' from origin 'http://127.0.0.1:8080' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+```
+
+CORS 无状态码，Status 为 `CORS error`。

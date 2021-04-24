@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CORS</title>
+  </head>
+  <body>
+    <script>
+      fetch("https://openapi.baidu.com/oauth/2.0/token")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+    </script>
+  </body>
+</html>
