@@ -12,7 +12,7 @@ sessionStorage 在页面刷新时不会丢失。
 
 模拟跨域 CORS
 
-[cors.html](/examples/cors.html)
+> [cors.html](https://fe-notes.yunyoujun.cn/examples/cors.html)
 
 <<< @/public/examples/cors.html
 
