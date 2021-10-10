@@ -1,0 +1,8 @@
+{
+	"dependencies": {
+		"node-fetch": "^3.0.0"
+	},
+	"scripts": {
+		"start": "ts-node index.ts"
+	}
+}

@@ -10,16 +10,14 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "vitepress": "^0.13.0"
+    "sass": "^1.42.1",
+    "vitepress": "^0.20.0"
   },
   "scripts": {
-    "dev": "yarn docs:dev",
-    "build": "yarn docs:build",
+    "dev": "npm run docs:dev",
+    "build": "npm run docs:build",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs"
-  },
-  "dependencies": {
-    "sass": "^1.32.11"
   }
 }
