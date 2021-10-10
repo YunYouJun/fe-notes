@@ -1,9 +1,8 @@
-const { getSidebar } = require("../../scripts/utils");
+import { getSidebar } from "../../scripts/utils";
 
-/**
- * @type {import('vitepress').UserConfig}
- */
-module.exports = {
+import type { UserConfig } from "vitepress";
+
+const config: UserConfig = {
   title: "前端笔记",
   description: "前端八股文面试笔记",
   themeConfig: {
@@ -61,3 +60,5 @@ function getGuideSidebar() {
     },
   ];
 }
+
+export default config;

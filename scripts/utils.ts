@@ -1,12 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-const { capitalize } = require("vue");
+import fs from "fs";
+import path from "path";
+import { capitalize } from "vue";
 
-/**
- *
- * @param {string} dir
- */
-function getPages(dir) {
+function getPages(dir: string) {
   return fs.readdirSync(dir).filter((f) => {
     if (
       fs.statSync(path.join(dir, f)).isDirectory() &&
@@ -21,10 +17,10 @@ function getPages(dir) {
 
 /**
  * 获取侧边栏
- * @param {string} folder 目录文件名
- * @param {string} title 标题
+ * @param folder 目录文件名
+ * @param title 标题
  */
-function getSidebar(folder, title) {
+export function getSidebar(folder: string, title: string) {
   const pages = getPages(`docs/${folder}`);
   const sidebar = [
     {
@@ -41,7 +37,3 @@ function getSidebar(folder, title) {
   });
   return sidebar;
 }
-
-module.exports = {
-  getSidebar,
-};

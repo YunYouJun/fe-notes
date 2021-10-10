@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^16.10.3",
     "sass": "^1.42.1",
     "vitepress": "^0.20.0"
   },
