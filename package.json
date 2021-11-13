@@ -10,9 +10,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^16.10.3",
-    "sass": "^1.42.1",
-    "vitepress": "^0.20.0"
+    "@types/node": "^16.11.7",
+    "sass": "^1.43.4",
+    "vitepress": "^0.20.1"
   },
   "scripts": {
     "dev": "npm run docs:dev",
