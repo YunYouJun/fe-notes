@@ -1,18 +1,37 @@
 import { getSidebar } from "../../scripts/utils";
+import { defineConfig } from 'vitepress'
 
-import type { UserConfig } from "vitepress";
+/**
+ * 获取导航侧边栏
+ */
+function getGuideSidebar() {
+  return [
+    {
+      text: "指南",
+      children: [
+        { text: "关于", link: "/guide/" },
+        { text: "开始", link: "/guide/start" },
+        { text: "参考", link: "/guide/ref" },
+      ],
+    },
+  ];
+}
 
-const config: UserConfig = {
+export default defineConfig({
   title: "前端笔记",
   description: "前端八股文面试笔记",
   themeConfig: {
-    repo: "YunYouJun/fe-notes",
-    docsBranch: "main",
-    docsDir: "docs",
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/YunYouJun/fe-notes' }
+    ],
 
-    editLinks: true,
-    editLinkText: "帮助咱们改善文档！",
-    lastUpdated: "上次更新",
+    // repo: "YunYouJun/fe-notes",
+    // docsBranch: "main",
+    // docsDir: "docs",
+
+    // editLinks: true,
+    // editLinkText: "帮助咱们改善文档！",
+    // lastUpdated: "上次更新",
 
     nav: [
       { text: "通用", link: "/common/" },
@@ -43,22 +62,4 @@ const config: UserConfig = {
     ["link", { rel: "icon", href: "/logo.png", type: "image/png" }],
     ["meta", { name: "author", content: "YunYouJun" }],
   ],
-};
-
-/**
- * 获取导航侧边栏
- */
-function getGuideSidebar() {
-  return [
-    {
-      text: "指南",
-      children: [
-        { text: "关于", link: "/guide/" },
-        { text: "开始", link: "/guide/start" },
-        { text: "参考", link: "/guide/ref" },
-      ],
-    },
-  ];
-}
-
-export default config;
+});

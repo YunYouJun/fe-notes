@@ -10,15 +10,16 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^16.11.7",
-    "sass": "^1.43.4",
-    "vitepress": "^0.20.1"
+    "@types/node": "^20.1.7",
+    "sass": "^1.62.1",
+    "vitepress": "1.0.0-alpha.75"
   },
   "scripts": {
     "dev": "npm run docs:dev",
     "build": "npm run docs:build",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "docs:serve": "vitepress serve docs",
+    "docs:preview": "vitepress preview docs"
   }
 }
