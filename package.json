@@ -2,6 +2,7 @@
   "name": "fe-notes",
   "version": "0.0.1",
   "private": true,
+  "packageManager": "pnpm@8.6.0",
   "author": {
     "name": "YunYouJun",
     "email": "me@yunyoujun.cn",
