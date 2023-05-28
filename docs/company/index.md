@@ -1,3 +1,3 @@
 # 公司
 
-- [米哈游](./mihoyo.md)
+- [米哈游](/company/mihoyo/)
