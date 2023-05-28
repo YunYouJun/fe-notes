@@ -1,5 +1,5 @@
 export class Observer {
-  private eventsMap = new Map();
+  private eventsMap = new Map()
 
   /**
    * 绑定
@@ -7,11 +7,10 @@ export class Observer {
    * @param callback
    */
   on(eventName: string, callback: (...args) => void) {
-    if (this.eventsMap.has(eventName)) {
-      this.eventsMap.get(eventName).push(callback);
-    } else {
-      this.eventsMap.set(eventName, [callback]);
-    }
+    if (this.eventsMap.has(eventName))
+      this.eventsMap.get(eventName).push(callback)
+    else
+      this.eventsMap.set(eventName, [callback])
   }
 
   /**
@@ -21,8 +20,8 @@ export class Observer {
    */
   emit(eventName: string, ...args) {
     this.eventsMap.get(eventName).forEach((fn: (...args) => void) => {
-      fn(...args);
-    });
+      fn(...args)
+    })
   }
 
   /**
@@ -30,6 +29,6 @@ export class Observer {
    * @param eventName
    */
   off(eventName: string) {
-    this.eventsMap.delete(eventName);
+    this.eventsMap.delete(eventName)
   }
 }

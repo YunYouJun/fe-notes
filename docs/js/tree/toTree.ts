@@ -1,75 +1,74 @@
 interface TreeNode {
-  id: number;
+  id: number
   /**
    * 父亲节点
    */
-  pid?: number;
-  name: string;
+  pid?: number
+  name: string
 }
 
 const source: TreeNode[] = [
   {
     id: 1,
-    name: "body",
+    name: 'body',
   },
   {
     id: 2,
     pid: 1,
-    name: "title",
+    name: 'title',
   },
   {
     id: 3,
     pid: 1,
-    name: "div",
+    name: 'div',
   },
   {
     id: 4,
     pid: 3,
-    name: "span",
+    name: 'span',
   },
   {
     id: 5,
     pid: 3,
-    name: "icon",
+    name: 'icon',
   },
   {
     id: 6,
     pid: 4,
-    name: "subspan",
+    name: 'subspan',
   },
-];
+]
 
 /**
  * 构建树
  * @param data
  */
 export function toTree(data: TreeNode[]) {
-  let result = [];
-  if (!Array.isArray(data)) {
-    return;
-  }
+  const result = []
+  if (!Array.isArray(data))
+    return
 
   // 构建节点索引
-  let map = {};
+  const map = {}
   data.forEach((item) => {
-    map[item.id] = item;
-  });
+    map[item.id] = item
+  })
 
   data.forEach((item) => {
-    let parent = map[item.pid];
+    const parent = map[item.pid]
     if (parent) {
-      if (parent.children) {
-        parent.children.push(item);
-      } else {
-        parent.children = [item];
-      }
-    } else {
-      result.push(item);
+      if (parent.children)
+        parent.children.push(item)
+      else
+        parent.children = [item]
     }
-  });
+    else {
+      result.push(item)
+    }
+  })
 
-  return result;
+  return result
 }
 
-const ans = toTree(source);
-console.log(JSON.stringify(ans, null, 2));
+const ans = toTree(source)
+console.log(JSON.stringify(ans, null, 2))

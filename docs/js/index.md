@@ -10,6 +10,8 @@
 
 现场手写正则表达式的情况应该比较少见（毕竟平时都是用到现查），但是我猜能熟练地手写出来一定也会令面试官刮目相看。
 
+> 2023 年之后就问问无敌的 ChatGPT 吧。
+
 ### [内存管理](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Memory_Management)
 
 垃圾回收：

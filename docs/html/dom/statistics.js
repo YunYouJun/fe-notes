@@ -4,32 +4,33 @@
 // const dom = parser.parseFromString(htmlString, "text/html");
 
 function statistics(root) {
-  const tagsMap = new Map();
+  const tagsMap = new Map()
 
-  const allNodes = root.getElementsByTagName("*");
+  const allNodes = root.getElementsByTagName('*')
 
-  let maxTag = {
-    name: "",
+  const maxTag = {
+    name: '',
     value: 0,
-  };
+  }
 
   for (let i = 0; i < allNodes.length; i++) {
-    const node = allNodes[i];
+    const node = allNodes[i]
     if (tagsMap.has(node.tagName)) {
-      const num = tagsMap.get(node.tagName) + 1;
-      tagsMap.set(node.tagName, num);
+      const num = tagsMap.get(node.tagName) + 1
+      tagsMap.set(node.tagName, num)
 
       if (num > maxTag.value) {
-        maxTag.name = node.tagName;
-        maxTag.value = num;
+        maxTag.name = node.tagName
+        maxTag.value = num
       }
-    } else {
-      tagsMap.set(node.tagName, 1);
+    }
+    else {
+      tagsMap.set(node.tagName, 1)
     }
   }
 
-  return maxTag;
+  return maxTag
 }
 
-const ans = statistics(document);
-console.log(ans);
+const ans = statistics(document)
+console.log(ans)

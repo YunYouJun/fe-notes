@@ -1,25 +1,28 @@
 {
   "name": "fe-notes",
-  "private": true,
   "version": "0.0.1",
-  "repository": "https://github.com/YunYouJun/fe-notes",
+  "private": true,
   "author": {
     "name": "YunYouJun",
     "email": "me@yunyoujun.cn",
     "url": "https://www.yunyoujun.cn"
   },
   "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^20.1.7",
-    "sass": "^1.62.1",
-    "vitepress": "1.0.0-alpha.75"
-  },
+  "repository": "https://github.com/YunYouJun/fe-notes",
   "scripts": {
     "dev": "npm run docs:dev",
     "build": "npm run docs:build",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.39.3",
+    "@types/node": "^20.2.5",
+    "eslint": "^8.41.0",
+    "sass": "^1.62.1",
+    "vitepress": "1.0.0-beta.1"
   }
 }

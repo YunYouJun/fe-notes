@@ -4,24 +4,24 @@
  * @param delay ms 延迟执行时间
  */
 export function debounce(fn: Function, delay = 200) {
-  let timer = null;
+  let timer = null
   return (...args) => {
     if (timer) {
-      clearTimeout(timer);
-      timer = null;
+      clearTimeout(timer)
+      timer = null
     }
 
     timer = setTimeout(() => {
-      fn(...args);
-    }, delay);
-  };
+      fn(...args)
+    }, delay)
+  }
 }
 
 function print(...args) {
-  console.log(...args);
+  console.log(...args)
 }
 
-const d = debounce(print, 200);
-d(1);
-d(2);
+const d = debounce(print, 200)
+d(1)
+d(2)
 // 输出：2

@@ -2,7 +2,7 @@
 import { h } from 'vue'
 import Theme from 'vitepress/theme'
 import './styles/css-vars.css'
-import "./styles/index.scss";
+import './styles/index.scss'
 
 export default {
   ...Theme,
@@ -11,7 +11,8 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
   },
+  // eslint-disable-next-line unused-imports/no-unused-vars
   enhanceApp({ app, router, siteData }) {
     // ...
-  }
+  },
 }
