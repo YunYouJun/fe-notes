@@ -1,11 +1,14 @@
+import fs from 'node:fs'
 import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
+import { capitalize } from 'vue'
+import matter from 'gray-matter'
 import { getPages, getSidebar } from '../../scripts/utils'
 
 /**
  * 获取导航侧边栏
  */
-function getGuideSidebar(): DefaultTheme.Sidebar {
+function getGuideSidebar(): DefaultTheme.SidebarItem[] {
   return [
     {
       text: '指南',
@@ -18,24 +21,36 @@ function getGuideSidebar(): DefaultTheme.Sidebar {
   ]
 }
 
-function getJavaScriptSidebar(): DefaultTheme.Sidebar {
+function getJavaScriptSidebar(): DefaultTheme.SidebarItem[] {
   const folder = 'js'
   const title = 'JavaScript 相关'
-  const pages = getPages(`docs/${folder}`)
-  console.log(pages)
+  const pages = getPages(`docs/${folder}/code/`)
+
+  const items: DefaultTheme.SidebarItem[] = [
+    {
+      text: '前端编程题',
+      link: `/${folder}/code/`,
+      items: pages.map((page) => {
+        const content = fs.readFileSync(`docs/${folder}/code/${page}/index.md`, 'utf-8')
+        const { data } = matter(content)
+
+        return {
+          text: data.title || capitalize(page),
+          link: `/${folder}/code/${page}/`,
+        }
+      }).filter(item => item.text !== 'Code'),
+    },
+  ]
+
   const sidebar: DefaultTheme.Sidebar = [
     {
       text: title,
       link: `/${folder}/`,
-      items: [],
+      items,
+      collapsed: false,
     },
   ]
-  pages.forEach((page) => {
-    sidebar[0].items.push({
-      text: capitalize(page),
-      link: `/${folder}/${page}/`,
-    })
-  })
+
   return sidebar
 }
 
@@ -56,24 +71,32 @@ export default defineConfig({
     // lastUpdated: "上次更新",
 
     nav: [
+      { text: '指南', link: '/guide/' },
       { text: '通用', link: '/common/' },
+      { text: '公司', link: '/company/' },
       {
-        text: 'Html',
-        link: '/html/',
-      },
-      {
-        text: 'JavaScript',
-        link: '/js/',
-      },
-      {
-        text: 'CSS',
-        link: '/css/',
+        text: '前端',
+        items: [
+          {
+            text: 'Html',
+            link: '/html/',
+          },
+          {
+            text: 'JavaScript',
+            link: '/js/',
+          },
+          {
+            text: 'CSS',
+            link: '/css/',
+          },
+        ],
       },
     ],
 
     sidebar: {
       '/guide/': getGuideSidebar(),
       '/common/': getSidebar('common', '通用'),
+      '/company/': getSidebar('company', '公司'),
       '/html/': getSidebar('html', 'Html 相关'),
       '/js/': getJavaScriptSidebar(),
       '/css/': getSidebar('css', 'CSS 相关'),

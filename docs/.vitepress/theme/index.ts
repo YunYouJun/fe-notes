@@ -4,6 +4,8 @@ import Theme from 'vitepress/theme'
 import './styles/css-vars.css'
 import './styles/index.scss'
 
+import 'uno.css'
+
 export default {
   ...Theme,
   Layout: () => {

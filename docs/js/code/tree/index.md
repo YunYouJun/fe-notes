@@ -4,8 +4,8 @@
 
 其实就是写一个递归（我百度一面遇到的题目）
 
-<<< @/js/tree/flatten.ts
+<<< @/js/code/tree/flatten.ts
 
 ## 还原（数组->树）
 
-<<< @/js/tree/toTree.ts
+<<< @/js/code/tree/toTree.ts
