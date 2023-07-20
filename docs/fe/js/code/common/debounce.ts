@@ -3,7 +3,7 @@
  * @param fn 执行的函数
  * @param delay ms 延迟执行时间
  */
-export function debounce(fn: Function, delay = 200) {
+export function debounce(fn: (...args: any) => void, delay = 200) {
   let timer = null
   return (...args) => {
     if (timer) {

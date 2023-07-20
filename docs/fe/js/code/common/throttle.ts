@@ -3,7 +3,7 @@
  * @param fn
  * @param threshold ms 单位时间
  */
-export function throttle(fn: Function, threshold = 200) {
+export function throttle(fn: (...args: any) => void, threshold = 200) {
   // 第一次立即执行
   let timer
   return (...args) => {

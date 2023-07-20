@@ -7,8 +7,10 @@ import matter from 'gray-matter'
 export function getPages(dir: string) {
   return fs.readdirSync(dir).filter((f) => {
     if (
-      fs.statSync(path.join(dir, f)).isDirectory()
-      && fs.existsSync(path.join(dir, f, 'index.md'))
+      (
+        fs.statSync(path.join(dir, f)).isDirectory()
+        && fs.existsSync(path.join(dir, f, 'index.md'))
+      ) || fs.statSync(path.join(dir, f)).isFile()
     )
       return true
 
@@ -21,22 +23,24 @@ export function getPages(dir: string) {
  * @param folder 目录文件名
  * @param title 标题
  */
-export function getSidebar(folder: string, title: string): DefaultTheme.SidebarItem[] {
+export function getSidebar(folder: string): DefaultTheme.SidebarItem[] {
   const pages = getPages(`docs/${folder}`)
   const sidebar: DefaultTheme.Sidebar = [
-    {
-      text: title,
-      link: `/${folder}/`,
-      items: pages.map((page) => {
-        const content = fs.readFileSync(`docs/${folder}/${page}/index.md`, 'utf-8')
-        const { data } = matter(content)
+    ...pages.map((page) => {
+      let pagePath = `docs/${folder}/${page}/index.md`
+      let link = `/${folder}/${page}/`
+      if (page.endsWith('.md')) {
+        pagePath = `docs/${folder}/${page}`
+        link = `/${folder}/${page}`
+      }
+      const content = fs.readFileSync(pagePath, 'utf-8')
+      const { data } = matter(content)
 
-        return {
-          text: data.title || capitalize(page),
-          link: `/${folder}/${page}/`,
-        }
-      }),
-    },
+      return {
+        text: data.title || capitalize(page),
+        link,
+      }
+    }),
   ]
 
   return sidebar

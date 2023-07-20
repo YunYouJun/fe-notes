@@ -9,7 +9,7 @@ Promise 的 resolve 回调执行是在所有输入的 promise 的 resolve 回调
 
 :::
 
-<<< @/js/code/promise/all.ts
+<<< @/fe/js/code/promise/all.ts
 
 答案是 `[3, 2, 1]`。
 

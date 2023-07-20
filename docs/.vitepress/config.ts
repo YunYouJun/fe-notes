@@ -5,6 +5,38 @@ import { capitalize } from 'vue'
 import matter from 'gray-matter'
 import { getPages, getSidebar } from '../../scripts/utils'
 
+const companyItems: DefaultTheme.NavItemWithChildren['items'] = [
+  {
+    text: '字节跳动',
+    link: '/company/bytedance/',
+  },
+  {
+    text: '米哈游',
+    link: '/company/mihoyo/',
+  },
+  {
+    text: '腾讯',
+    link: '/company/tencent/',
+  },
+]
+
+const commonItems: DefaultTheme.NavItemWithChildren['items'] = getSidebar('common') as DefaultTheme.NavItemWithChildren['items']
+
+function getCommonSidebar() {
+  return commonItems
+}
+
+function getCompanySidebar(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: '公司',
+      collapsed: false,
+      link: '/company/',
+      items: companyItems,
+    },
+  ]
+}
+
 /**
  * 获取导航侧边栏
  */
@@ -22,32 +54,85 @@ function getGuideSidebar(): DefaultTheme.SidebarItem[] {
 }
 
 function getJavaScriptSidebar(): DefaultTheme.SidebarItem[] {
-  const folder = 'js'
-  const title = 'JavaScript 相关'
+  const folder = 'fe/js'
   const pages = getPages(`docs/${folder}/code/`)
 
   const items: DefaultTheme.SidebarItem[] = [
     {
+      text: '常见问题',
+      link: `/${folder}/`,
+    },
+    {
       text: '前端编程题',
       link: `/${folder}/code/`,
-      items: pages.map((page) => {
-        const content = fs.readFileSync(`docs/${folder}/code/${page}/index.md`, 'utf-8')
-        const { data } = matter(content)
+      items: [
+        ...pages.filter(p => !p.endsWith('.md')).map((page) => {
+          const content = fs.readFileSync(`docs/${folder}/code/${page}/index.md`, 'utf-8')
+          const { data } = matter(content)
 
-        return {
-          text: data.title || capitalize(page),
-          link: `/${folder}/code/${page}/`,
-        }
-      }).filter(item => item.text !== 'Code'),
+          return {
+            text: data.title || capitalize(page),
+            link: `/${folder}/code/${page}/`,
+          }
+        }).filter(item => item.text !== 'Code'),
+      ],
     },
   ]
 
+  return items
+}
+
+export function getFeSidebar() {
   const sidebar: DefaultTheme.Sidebar = [
     {
-      text: title,
-      link: `/${folder}/`,
-      items,
+      text: 'HTML',
+      link: '/fe/html/',
       collapsed: false,
+      items: [
+        {
+          text: 'DOM',
+          link: '/fe/html/dom/',
+        },
+      ],
+    },
+    {
+      text: 'CSS',
+      link: '/fe/css/',
+      collapsed: false,
+      items: [
+        {
+          text: '练习题',
+          link: '/fe/css/practice',
+        },
+        {
+          text: '参考',
+          link: '/fe/css/ref',
+        },
+      ],
+    },
+    {
+      text: 'JavaScript',
+      collapsed: false,
+      items: getJavaScriptSidebar(),
+    },
+    {
+      text: 'TypeScript',
+      // collapsed: false,
+      link: '/fe/ts/',
+    },
+    {
+      text: '框架',
+      collapsed: false,
+      items: [
+        {
+          text: 'React',
+          link: '/fe/frameworks/react/',
+        },
+        {
+          text: 'Vue',
+          link: '/fe/frameworks/vue/',
+        },
+      ],
     },
   ]
 
@@ -72,22 +157,45 @@ export default defineConfig({
 
     nav: [
       { text: '指南', link: '/guide/' },
-      { text: '通用', link: '/common/' },
-      { text: '公司', link: '/company/' },
+      {
+        text: '通用',
+        items: commonItems,
+      },
+      {
+        text: '公司',
+        items: companyItems,
+      },
       {
         text: '前端',
         items: [
           {
             text: 'Html',
-            link: '/html/',
-          },
-          {
-            text: 'JavaScript',
-            link: '/js/',
+            link: '/fe/html/',
           },
           {
             text: 'CSS',
-            link: '/css/',
+            link: '/fe/css/',
+          },
+          {
+            text: 'JavaScript',
+            link: '/fe/js/',
+          },
+          {
+            text: 'TypeScript',
+            link: '/fe/ts/',
+          },
+          {
+            text: '框架',
+            items: [
+              {
+                text: 'React',
+                link: '/fe/frameworks/react/',
+              },
+              {
+                text: 'Vue',
+                link: '/fe/frameworks/vue/',
+              },
+            ],
           },
         ],
       },
@@ -95,11 +203,9 @@ export default defineConfig({
 
     sidebar: {
       '/guide/': getGuideSidebar(),
-      '/common/': getSidebar('common', '通用'),
-      '/company/': getSidebar('company', '公司'),
-      '/html/': getSidebar('html', 'Html 相关'),
-      '/js/': getJavaScriptSidebar(),
-      '/css/': getSidebar('css', 'CSS 相关'),
+      '/common/': getCommonSidebar(),
+      '/company/': getCompanySidebar(),
+      '/fe/': getFeSidebar(),
     },
   },
 
