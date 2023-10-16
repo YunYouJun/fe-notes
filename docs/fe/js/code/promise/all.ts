@@ -19,7 +19,6 @@ const promise3 = new Promise((resolve) => {
 /**
  * 实现 Promise.all()
  * @param promises
- * @returns
  */
 function promiseAll(promises: Promise<any>[]) {
   const results = []

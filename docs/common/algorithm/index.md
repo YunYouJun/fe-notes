@@ -14,6 +14,9 @@
 - [全排列](https://leetcode-cn.com/problems/permutations/): 回溯法
 - 实现 `[['a', 'b'], ['n', 'm'], ['0', '1']]`（长度不固定） 的全排列为 `['an0', 'an1', 'am0', 'am1', 'bn0', 'bn1', 'bm0', 'bm1']`
 
+<<< @/common/algorithm/combine-list/1.ts
+<<< @/common/algorithm/combine-list/2.ts
+
 ## 快速排序
 
 ## 红黑树的特性

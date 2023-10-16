@@ -21,7 +21,6 @@ export function getPages(dir: string) {
 /**
  * 获取侧边栏
  * @param folder 目录文件名
- * @param title 标题
  */
 export function getSidebar(folder: string): DefaultTheme.SidebarItem[] {
   const pages = getPages(`docs/${folder}`)

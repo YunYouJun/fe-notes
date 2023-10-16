@@ -56,6 +56,10 @@ TS用过哪些特性？
 如何合并多个异步请求错误？（回答的是Promise.all）
 事件循环是什么？宏任务和微任务是什么？
 
+### 事件循环是什么？宏任务和微任务是什么？
+
+- [事件循环：微任务和宏任务](https://zh.javascript.info/event-loop)
+
 虚拟DOM有什么样的作用？
 Vue的响应式原理
 Vue和React Component都有哪些生命周期？

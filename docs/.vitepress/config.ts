@@ -134,6 +134,16 @@ export function getFeSidebar() {
         },
       ],
     },
+    {
+      text: '其他',
+      collapsed: false,
+      items: [
+        {
+          text: '性能优化',
+          link: '/fe/other/performance',
+        },
+      ],
+    },
   ]
 
   return sidebar
@@ -194,6 +204,15 @@ export default defineConfig({
               {
                 text: 'Vue',
                 link: '/fe/frameworks/vue/',
+              },
+            ],
+          },
+          {
+            text: '其他',
+            items: [
+              {
+                text: '性能优化',
+                link: '/fe/other/performance/',
               },
             ],
           },

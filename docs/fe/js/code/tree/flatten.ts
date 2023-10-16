@@ -33,7 +33,6 @@ const result = [
 
 /**
  * 拍平
- * @param tree
  */
 export function flatten(trees: Tree[]) {
   let ans = []

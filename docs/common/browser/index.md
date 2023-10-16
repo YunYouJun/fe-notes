@@ -6,7 +6,11 @@ sessionStorage 属性允许你访问一个，对应当前源的 session Storage 
 
 sessionStorage 在页面刷新时不会丢失。
 
-## [深入：微任务与 Javascript 运行时环境](https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth)
+- [在 JavaScript 中通过 queueMicrotask() 使用微任务｜MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_DOM_API/Microtask_guide)
+- [深入：微任务与 Javascript 运行时环境｜MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth)
+
+- [继承与原型链](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+- [并发模型与事件循环｜MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Event_loop)
 
 ## CORS
 

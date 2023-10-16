@@ -6,6 +6,8 @@
 
 ## JavaScript 指南
 
+- [new 运算符 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new)
+
 ### [正则表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)
 
 现场手写正则表达式的情况应该比较少见（毕竟平时都是用到现查），但是我猜能熟练地手写出来一定也会令面试官刮目相看。
@@ -68,6 +70,12 @@ TypeScript 是一种给 JavaScript 添加特性的语言扩展。增加的功能
 - 模块
 - lambda 函数的箭头语法
 - 可选参数以及默认参数
+
+### 语法
+
+- 块级作用域 [let | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/let)
+  - `let` 和 `var` 不一样，它不会在全局对象上创建属性
+- [instanceof | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof) vs [typeof | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/typeof)
 
 ### MDN
 
