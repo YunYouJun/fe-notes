@@ -1,8 +1,8 @@
+import type { DefaultTheme } from 'vitepress'
 import fs from 'node:fs'
 import path from 'node:path'
-import { capitalize } from 'vue'
-import type { DefaultTheme } from 'vitepress'
 import matter from 'gray-matter'
+import { capitalize } from 'vue'
 
 export function getPages(dir: string) {
   return fs.readdirSync(dir).filter((f) => {
@@ -11,8 +11,9 @@ export function getPages(dir: string) {
         fs.statSync(path.join(dir, f)).isDirectory()
         && fs.existsSync(path.join(dir, f, 'index.md'))
       ) || fs.statSync(path.join(dir, f)).isFile()
-    )
+    ) {
       return true
+    }
 
     return false
   })

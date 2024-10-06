@@ -1,8 +1,8 @@
-import fs from 'node:fs'
 import type { DefaultTheme } from 'vitepress'
+import fs from 'node:fs'
+import matter from 'gray-matter'
 import { defineConfig } from 'vitepress'
 import { capitalize } from 'vue'
-import matter from 'gray-matter'
 import { getPages, getSidebar } from '../../scripts/utils'
 
 const companyItems: DefaultTheme.NavItemWithChildren['items'] = [

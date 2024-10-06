@@ -1,4 +1,6 @@
+@use 'sass:color';
+
 :root {
   --c-brand: #5186ec;
-  --c-brand-light: #{lighten(#5186ec, 5%)};
+  --c-brand-light: #{color.adjust(#5186ec, $lightness: 5%)};
 }

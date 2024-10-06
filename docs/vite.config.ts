@@ -1,7 +1,7 @@
 import { resolve } from 'node:path'
-import { defineConfig } from 'vite'
-import Components from 'unplugin-vue-components/vite'
 import UnoCSS from 'unocss/vite'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig } from 'vite'
 import { MarkdownTransform } from './.vitepress/plugins/markdownTransform'
 
 export default defineConfig(async () => {
