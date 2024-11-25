@@ -135,6 +135,16 @@ export function getFeSidebar() {
       ],
     },
     {
+      text: '兼容性问题',
+      collapsed: true,
+      items: [
+        {
+          text: 'Safari',
+          link: '/fe/compatibility/safari',
+        },
+      ],
+    },
+    {
       text: '其他',
       collapsed: false,
       items: [
@@ -208,11 +218,15 @@ export default defineConfig({
             ],
           },
           {
+            text: '兼容性问题',
+            link: '/fe/compatibility/safari',
+          },
+          {
             text: '其他',
             items: [
               {
                 text: '性能优化',
-                link: '/fe/other/performance/',
+                link: '/fe/other/performance',
               },
             ],
           },
