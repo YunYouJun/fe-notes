@@ -1,11 +1,17 @@
 import type { DefaultTheme } from 'vitepress'
 import fs from 'node:fs'
+import { getVitepressConfig } from '@yunyoujun/docs'
 import matter from 'gray-matter'
 import { defineConfig } from 'vitepress'
 import { capitalize } from 'vue'
+
 import { getPages, getSidebar } from '../../scripts/utils'
 
-const companyItems: DefaultTheme.NavItemWithChildren['items'] = [
+const vpConfig = getVitepressConfig({
+  repo: 'https://github.com/YunYouJun/fe-notes',
+})
+
+const companyItems: DefaultTheme.NavItemWithLink[] = [
   {
     text: '字节跳动',
     link: '/company/bytedance/',
@@ -160,12 +166,12 @@ export function getFeSidebar() {
 }
 
 export default defineConfig({
+  ...vpConfig,
+
   title: '前端笔记',
   description: '前端八股文面试笔记',
   themeConfig: {
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/YunYouJun/fe-notes' },
-    ],
+    ...vpConfig.themeConfig,
 
     // repo: "YunYouJun/fe-notes",
     // docsBranch: "main",
